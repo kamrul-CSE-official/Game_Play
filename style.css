@@ -208,6 +208,7 @@ nav {
     box-shadow: 0px 4px 30px 15px rgba(0, 0, 0, 0.05);
     border-radius: 15px;
     position: relative;
+    transition: border 0.5s;
 }
 
 .funny-card img {
@@ -221,20 +222,59 @@ nav {
     position: absolute;
     top: 40%;
     left: 40%;
-    display: none;
+    opacity: 0;
     text-align: center;
+    transition: opacity 0.5s;
 }
 
 .funny-card:hover {
-    opacity: 90%;
+    opacity: 0.9;
     border: 2px solid #F948B2;
-    transition: border 10.5s;
+    transition: border 0.5s;
 
     .watchNow {
-        display: block;
-        transition: all 1.5s;
+        opacity: 1;
     }
 }
+
+/* Play section */
+.play-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.play-img {
+    position: relative;
+}
+
+.playImagSmall {
+    position: absolute;
+    left: -100px;
+    bottom: -100px;
+}
+
+.play-text {
+    width: 50%;
+    margin-left: 20px;
+    text-align: end;
+    margin-right: 110px;
+}
+
+.play-img {
+    width: 50%;
+}
+
+.play-text h3 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.play-text h3 span {
+    color: #F948B2;
+}
+
 
 /* Responsive For Mobile Devices */
 @media screen and (max-width: 567px) {
@@ -243,7 +283,8 @@ nav {
     .nav-content,
     .hero,
     .gamer,
-    .funny-cards {
+    .funny-cards,
+    .play-section {
         flex-direction: column;
     }
 
@@ -272,7 +313,8 @@ nav {
         width: 100%;
     }
 
-    .gamer-text {
+    .gamer-text,
+    .funny-card {
         text-align: center;
     }
 
@@ -282,5 +324,17 @@ nav {
 
     .gamer-text p {
         text-align: center;
+    }
+
+    .play-text {
+        width: 100%;
+    }
+
+    .play-img {
+        width: 200px;
+    }
+
+    .play-img img {
+        width: 100%;
     }
 }
